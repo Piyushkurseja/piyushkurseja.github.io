@@ -31,7 +31,7 @@
                 <div class="header-left">
                     <div class="logo">
                         <a href="index.html">
-                            <img src="assets/images/slider/logo.png" alt="logo">
+                            <!-- <img src="assets/images/slider/logo.png" alt="logo"> -->
                         </a>
                     </div>
                 </div>
@@ -2360,26 +2360,107 @@
 
     </main>
 
-    <!-- Start Footer Area -->
-    <div class="rn-footer-area rn-section-gap section-separator">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="footer-area text-center">
+<style>
+    body {
+      background: #0d1117; /* dark background */
+      font-family: Arial, sans-serif;
+      color: white;
+      margin: 0;
+      padding: 0;
+    }
 
-                        <div class="logo">
-                            <a href="index.html">
-                                <img src="assets/images/slider/logo.png" alt="logo">
-                            </a>
-                        </div>
+    .footer {
+      background: #161b22; /* deep dark gray */
+      padding: 20px 40px;
+      border-radius: 12px;
+      margin: 40px auto;
+      max-width: 900px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 0 15px rgba(0,0,0,0.4);
+    }
 
-                        <p class="description mt--30">© Piyush <a target="_blank"></a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
+    .footer-left h3 {
+      margin: 0;
+      font-size: 22px;
+      font-weight: bold;
+      color: #58a6ff; /* blue accent */
+    }
+
+    .footer-left p {
+      margin: 4px 0 0;
+      font-size: 14px;
+      color: #8b949e; /* muted gray */
+    }
+
+    .footer-right {
+      text-align: right;
+    }
+
+    .footer-right #footer-text {
+      font-size: 16px;
+      font-weight: 500;
+      color: #f39c12; /* golden yellow */
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .footer-icons a {
+      margin-left: 12px;
+      text-decoration: none;
+    }
+
+    .footer-icons i {
+      font-size: 22px;
+      color: #c9d1d9; /* light gray */
+      transition: 0.3s;
+    }
+
+    .footer-icons i:hover {
+      color: #58a6ff; /* blue highlight */
+    }
+  </style>
+  <!-- Footer Section -->
+  <footer class="footer">
+    <!-- Left side -->
+    <div class="footer-left">
+      <h3>Piyush Kurseja</h3>
+      <p>AI Developer | Web Enthusiast</p>
     </div>
-    <!-- End Footer Area -->
+
+    <!-- Right side -->
+    <div class="footer-right">
+      <span id="footer-text"></span>
+      <div class="footer-icons">
+        <a href="https://github.com/yourprofile" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://linkedin.com/in/yourprofile" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="mailto:youremail@example.com"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JS for animated footer text -->
+  <script>
+    const footerTexts = ["Let's Connect!", "Available for Projects", "Open to Opportunities"];
+    let fCount = 0, fIndex = 0, fCurrent = "", fLetter = "";
+
+    (function typeFooter() {
+      if (fCount === footerTexts.length) fCount = 0;
+      fCurrent = footerTexts[fCount];
+      fLetter = fCurrent.slice(0, ++fIndex);
+
+      document.getElementById("footer-text").textContent = fLetter;
+      if (fLetter.length === fCurrent.length) {
+        fCount++;
+        fIndex = 0;
+        setTimeout(typeFooter, 1500);
+      } else {
+        setTimeout(typeFooter, 100);
+      }
+    })();
+  </script>
+
 
     <!-- JS ============================================ -->
     <script src="assets/js/vendor/jquery.js"></script>
